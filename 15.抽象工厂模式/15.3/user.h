@@ -20,18 +20,18 @@ private:
 class IUser
 {
 public:
-    void Insert(User *user);
-    User *GetUser(int id);
+    virtual void Insert(User *user) = 0;
+    virtual User *GetUser(int id) = 0;
 };
 
 class SqlserverUser : public IUser
 {
 public:
-    void Insert(User *user)
+    void Insert(User *user) override
     {
         cout << "在SQL Server中给User表增加一条记录" << endl;
     }
-    User *GetUser(int id)
+    User *GetUser(int id) override
     {
         cout << "在SQL Server中根据ID得到User表的一条记录" << endl;
         return nullptr;
@@ -41,11 +41,11 @@ public:
 class AccessUser : public IUser
 {
 public:
-    void Insert(User *user)
+    void Insert(User *user) override
     {
         cout << "在Access中给User表增加一条记录" << endl;
     }
-    User *GetUser(int id)
+    User *GetUser(int id) override
     {
         cout << "在Access中根据ID得到User表的一条记录" << endl;
         return nullptr;
