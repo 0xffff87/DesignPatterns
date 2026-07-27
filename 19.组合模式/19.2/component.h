@@ -25,10 +25,12 @@ public:
     {
         cout << "Cannot add to a leaf" << endl;
     }
+    
     void Remove(Component* c) override
     {
         cout << "Cannot remove from a leaf" << endl;
     }
+
     void Display(int depth) override
     {
         cout << string(depth, '-') << m_name << endl;
@@ -43,10 +45,12 @@ public:
     {
         m_children.push_back(c);
     }
+
     void Remove(Component* c) override
     {
         m_children.remove(c);
     }
+
     void Display(int depth) override
     {
         cout << string(depth, '-') << m_name << endl;
@@ -55,6 +59,7 @@ public:
             (*it)->Display(depth + 2);
         }
     }
+    
 private:
     list<Component*> m_children;
 };
