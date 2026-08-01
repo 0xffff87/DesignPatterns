@@ -6,7 +6,7 @@
 # 编译方式
 ```
 cd DesignPatterns
-cmake -B build
-cmake --build build
+./build.sh
 ```
-然后在`DesignPatterns/build`中可以看到编译出来的本项目中的所有程序。
+
+在`DesignPatterns/build`中可以看到编译出来的本项目中的所有程序。
